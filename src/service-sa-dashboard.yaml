@@ -4,7 +4,5 @@ metadata:
   name: sa-dashboard
 spec:
   ports:
-  - protocol: TCP
-    port: 80
-  type: ExternalName
-  externalName: devapp.staracademyapp.com
+  - port: 443
+  host: devapp.staracademyapp.com

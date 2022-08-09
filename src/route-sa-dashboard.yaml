@@ -7,7 +7,8 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-  - http:
+  - host: devapp.staracademyapp.com
+    http:
       paths:
       - path: /
         pathType: ImplementationSpecific
