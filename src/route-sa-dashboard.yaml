@@ -4,6 +4,8 @@ metadata:
   name: sa-dashboard-route
   annotations:
     konghq.com/strip-path: "true"
+    konghq.com/methods: "GET,POST"
+    konghq.com/protocols: "https"
 spec:
   ingressClassName: kong
   rules:
