@@ -193,12 +193,21 @@ dblessConfig:
   config: |
     _format_version: "1.1"
     services:
-    - host: mockbin.org
-      name: example_service
-      port: 80
-      protocol: http
+    - host: devapp.staracademyapp.com
+      name: sa-dashboard
+      port: 443
+      protocol: https
       routes:
-      - name: mocking
+      - name: sa-dashboard-route
         paths:
-        - /mock
+        - /
+        strip_path: true
+    - host: devauth.staracademyapp.com
+      name: sa-authapi
+      port: 443
+      protocol: https
+      routes:
+      - name: sa-authapi-route
+        paths:
+        - /auth-api
         strip_path: true
