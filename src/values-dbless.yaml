@@ -187,11 +187,11 @@ dblessConfig:
     _transform: true
 
     services:
-    - name: chucknorris
-      url: https://api.chucknorris.io
-      path: /jokes/random
-      routes:
-        - name: chucknorris-routes
-          paths:
-            - /chucknorris
-          strip_path: true
+      - name: chucknorris
+        url: https://api.chucknorris.io
+        path: /jokes/random
+        routes:
+          - name: chucknorris-routes
+            paths:
+              - /chucknorris
+            strip_path: true
