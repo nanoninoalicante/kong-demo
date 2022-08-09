@@ -12,6 +12,17 @@ env:
   admin_gui_error_log: /dev/stderr
   portal_api_error_log: /dev/stderr
 
+
+# -----------------------------------------------------------------------------
+# Ingress Controller parameters
+# -----------------------------------------------------------------------------
+
+# Kong Ingress Controller's primary purpose is to satisfy Ingress resources
+# created in k8s.  It uses CRDs for more fine grained control over routing and
+# for Kong specific configuration.
+ingressController:
+  enabled: false
+
 enterprise:
   enabled: false
   # Kong Enterprise license secret name
@@ -170,3 +181,24 @@ manager:
     path: /
     # Each path in an Ingress is required to have a corresponding path type. (ImplementationSpecific/Exact/Prefix)
     pathType: ImplementationSpecific
+
+
+# Kong's configuration for DB-less mode
+# Note: Use this section only if you are deploying Kong in DB-less mode
+# and not as an Ingress Controller.
+dblessConfig:
+  # Either Kong's configuration is managed from an existing ConfigMap (with Key: kong.yml)
+  # configMap: ""
+  # Or the configuration is passed in full-text below
+  config: |
+    _format_version: "1.1"
+    services:
+    - host: mockbin.org
+      name: example_service
+      port: 80
+      protocol: http
+      routes:
+      - name: mocking
+        paths:
+        - /mock
+        strip_path: true
