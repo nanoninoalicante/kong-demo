@@ -5,3 +5,8 @@ metadata:
   annotations:
     konghq.com/protocol: "https"
     konghq.com/host-header: "devapp.staracademyapp.com"
+spec:
+  ports:
+  - port: 80
+  type: ExternalName
+  externalName: devapp.staracademyapp.com
