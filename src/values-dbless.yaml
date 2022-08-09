@@ -70,7 +70,7 @@ proxy:
   # To specify annotations or labels for the proxy service, add them to the respective
   # "annotations" or "labels" dictionaries below.
   annotations: {}
-  # loadBalancerIP: 34.141.174.236
+  loadBalancerIP: 34.138.39.129
 
 
 admin:
